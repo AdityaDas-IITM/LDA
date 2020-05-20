@@ -69,10 +69,10 @@ Nothing new to learn in QDA, just that we cannot cancel the X<sup>2</sup> term a
 You can see that this expression is no longer linear with respect to X.<br />
 Lets see the difference in performance of LDA and QDA on the Iris dataset by drawing the decision boundary.
 ![](Images/LDA_Iris.PNG)
-
+                                                
 ![](Images/QDA_Iris.PNG)
 
-We can see that in this case QDA does a mildly better job with the decision boundary of Versicolor and Virginica.
+We can see that in this case QDA(the second picture) does a slightly better job with the decision boundary of Versicolor and Virginica.
 
 # LDA Dimensionality Reduction
 In sklearn, you will find that LDA also is a method of dimensionality reduction. Let us quickly look at that as well.<br />
