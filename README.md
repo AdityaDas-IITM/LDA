@@ -6,6 +6,7 @@ whereas the LDA classifier tries to find this probability using the Bayes theore
 
 # LDA Classifier
 Before moving on let us revisit the Baye's Theorem
+
 ![](Images/Bayes_simple.PNG)
 
 
