@@ -22,12 +22,24 @@ Lets break down the right hand side and compare it with the original Bayes Theor
   it is denoted by a weighted sum as shown.
 
 The task at hand is to find f<sub>k</sub>(x) or the distribution of data in your dataset which can also tell the probability. We shall proceed with the assumption that it is a normal distribution. Lets see what a normal distribution looks like.
-**Lets assume that there is only one feature and based on that we are doing the classification**. So if the values in the feature were to be distributed normally and normalised, it would look like
+**Lets assume that there is only one feature and based on that we are doing the classification**. So if the values in the feature were to be distributed normally and normalised, it would look something like
 ![](Images/normal_graph.png)
-The equation is:
+The equation of this graph is:
 
 ![](Images/normal_eqn.PNG)
 
 * μ<sub>k</sub> is the average of all x belonging to class k
 * σ<sup>2</sup><sub>k</sub> is the variance of all x belonging to class k. **The assumption of LDA is that the variance of all classes is equal and so we can refer to it as just σ<sup>2</sup>**
-After knowing all these values, we need to plug it into P<sub>k</sub>(x) and find its value for each k. The class corresponding to the highest value is the class to which this particular datapoint belongs to.
+After knowing all these values, we need to plug it into P<sub>k</sub>(x) and find its value for each k. The class corresponding to the highest value is the class to which this particular data-point belongs to. Lets compare the values for two arbitrary classes and see if we can conclude something.
+
+![](Images/img1.jpg)
+
+We see that the denominators are the same so we need to only compare the numerators. Lets take the log and instead compare the log values as that simplifies things
+
+![](Images/img2.jpg)
+
+After cancelling the the common terms in both the equations, we are left with a relatively simple expression we actually need to compute and compare so determine which class the data-point belongs to. This is the value we need to calculate for each class and is given by
+
+![](Images/img3.PNG)
+
+We can see that this expression is linear with respect to x and so the whole process is called Linear Discriminant Analysis
