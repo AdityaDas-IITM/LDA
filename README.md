@@ -63,7 +63,7 @@ Remember that x and μ<sub>k</sub> are now vectors and the T means transpose. No
 
 # QDA Classifier
 And thats LDA done. Lets quickly look at something more interesting. LDA gives us only linear boundaries which will not always be good enough to separate the data. The culprit behind this is our assumption of the variance or the covariance to be equal for all classes because of which the quadratic term was a common term and cancelled out. What if we do not make this assumption and generalise LDA. This is what is called Quadratic Discriminant Analysis or QDA.
-Nothing new to learn in QDA, just that we cannot cancel the X<sup>2</sup> term and so our discriminant function is now a little different. It is not called the **Quadratic Discriminant Function** and is represented by 
+Nothing new to learn in QDA, just that we cannot cancel the X<sup>2</sup> term and so our discriminant function is now a little different. It is now called the **Quadratic Discriminant Function** and is represented by 
 ![](Images/QDF.PNG)
 
 You can see that this expression is no longer linear with respect to X.<br />
@@ -79,7 +79,7 @@ In sklearn, you will find that LDA also is a method of dimensionality reduction.
 This is not a classification algorithm, it is a way of transforming the feature space into a lower dimensional space and then the user is free to use more robust classification algorithms like RandomForest on this compressed data.<br />
 
 **But how is this different from PCA?**<br />
-The basic aim of PCA is to project the Data into a new axis that captures the variance of the data. The aim of the LDA dimensionality reduction technique is to project the Data into a new axis that ehnances the separatiblity of the classes. The Picture give below should make it clear.
+The basic aim of PCA is to project the Data into a new axis that captures the variance of the data. The aim of the LDA dimensionality reduction technique is to project the Data into a new axis that ehnances the separatiblity of the classes. The Picture given below should make it clear.
 ![](Images/LDAvsPCA.PNG)
 
-So PCA does not take into account the class labels, just tries to project the whole data onto a meaningful axis that explains its variance, where as LDA is concerned about the class labels and tries to maximise separatibility. Normally you woulld use PCA first if required to get rid of multicollinearity and other issues and then perform a LDA reduction before passing it on to some classification algorithm
+So PCA does not take into account the class labels, just tries to project the whole data onto a meaningful axis that explains its variance, where as LDA is concerned about the class labels and tries to maximise separatibility. Normally you would use PCA first if required to get rid of multicollinearity and other issues and then perform a LDA reduction before passing it on to some classification algorithm
