@@ -13,7 +13,7 @@ Before moving on let us revisit the Baye's Theorem
 Now we will see a restructured version of this to suit our task of classification
 ![](Images/Bayes.PNG)
 
-The left hand side of this formula is interpreted as: Probability of a data point being in class k if its features are x. It will be refered to using Pμ<sub>k</sub>(x)
+The left hand side of this formula is interpreted as: Probability of a data point being in class k if its features are x. It will be refered to using P<sub>k</sub>(x).<br />
 Lets break down the right hand side and compare it with the original Bayes Theorem
 * π<sub>k</sub> corresponds to P(A) which is the probability of occurence of class k in your data.
 * f<sub>k</sub>(x) is the probability of occurence of x in class k. To find this we need to know the distribution of the data.
@@ -29,3 +29,4 @@ The equation is:
 
 * μ<sub>k</sub> is the average of all x belonging to class k
 * σ<sup>2</sup><sub>k</sub> is the variance of all x belonging to class k. **The assumption of LDA is that the variance of all classes is equal and so we can refer to it as just σ<sup>2</sup>**
+After knowing all these values, we need to plug it into P<sub>k</sub>(x) and find its value for each k. The class corresponding to the highest value is the class to which this particular datapoint belongs to.
