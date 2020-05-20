@@ -42,7 +42,7 @@ After cancelling the the common terms in both the equations, we are left with a 
 
 ![](Images/img3.PNG)
 
-We can see that this expression is linear with respect to x and so the whole process is called Linear Discriminant Analysis. To figure out the class, the ẟ<sub>k</sub>(x) values for two classes is compared with an inequality sign and this inequaity gives the decision boundary between two classes which is linear in this case. ẟ<sub>k</sub>(x) is called the Lineras Discriminant function<br />
+We can see that this expression is linear with respect to x and so the whole process is called Linear Discriminant Analysis. To figure out the class, the ẟ<sub>k</sub>(x) values for two classes is compared with an inequality sign and this inequaity gives the decision boundary between two classes which is linear in this case. ẟ<sub>k</sub>(x) is called the **Linear Discriminant function**<br />
 Now all that is left to do is estimate the values of μ<sub>k</sub>, σ<sup>2</sup> and π<sub>k</sub>. We have just assumed that the distribution is gaussian which gave us the above equation, but these values are still yet to be known. The estimates of these values are given by
 ![](Images/estimates1.PNG)
 
@@ -63,9 +63,10 @@ Remember that x and μ<sub>k</sub> are now vectors and the T means transpose. No
 
 # QDA Classifier
 And thats LDA done. Lets quickly look at something more interesting. LDA gives us only linear boundaries which will not always be good enough to separate the data. The culprit behind this is our assumption of the variance or the covariance to be equal for all classes because of which the quadratic term was a common term and cancelled out. What if we do not make this assumption and generalise LDA. This is what is called Quadratic Discriminant Analysis or QDA.
-Nothing new to learn in QDA, just that we cannot cancel the X<sup>2</sup> term and so our discriminant function is now a little different. It is not called the Quadratic Discriminant Function and is represented by 
+Nothing new to learn in QDA, just that we cannot cancel the X<sup>2</sup> term and so our discriminant function is now a little different. It is not called the **Quadratic Discriminant Function** and is represented by 
 ![](Images/QDF.PNG)
 
+You can see that this expression is no longer linear with respect to X.<br />
 Lets see the difference in performance of LDA and QDA on the Iris dataset by drawing the decision boundary.
 ![](Images/LDA_Iris.PNG)
 
