@@ -38,8 +38,23 @@ We see that the denominators are the same so we need to only compare the numerat
 
 ![](Images/img2.jpg)
 
-After cancelling the the common terms in both the equations, we are left with a relatively simple expression we actually need to compute and compare so determine which class the data-point belongs to. This is the value we need to calculate for each class and is given by
+After cancelling the the common terms in both the equations, we are left with a relatively simple expression we actually need to compute and compare so determine which class the data-point belongs to. **Remember the x here is the features of the test data point**. This is the value we need to calculate for each class and is given by
 
 ![](Images/img3.PNG)
 
-We can see that this expression is linear with respect to x and so the whole process is called Linear Discriminant Analysis
+We can see that this expression is linear with respect to x and so the whole process is called Linear Discriminant Analysis. To figure out the class, the ẟ<sub>k</sub>(x) values for two classes is compared with an inequality sign and this inequaity gives the decision boundary between two classes which is linear in this case.<br />
+Now all that is left to do is estimate the values of μ<sub>k</sub>, σ<sup>2</sup> and π<sub>k</sub>. We have just assumed that the distribution is gaussian which gave us the above equation, but these values are still yet to be known. The estimates of these values are given by
+![](Images/estimates1.PNG)
+
+![](Images/estimates2.PNG)
+* μ<sub>k</sub> is the average of x over each class
+* σ<sup>2</sup> is like a weighted average of the variance of each class
+* π<sub>k</sub> is the fraction of data belonging to class k in the training set<br />
+These values are plugged into ẟ<sub>k</sub>(x) along with x and computed for each class and compared<br />
+
+Now if the number of features is more than one, the concept remains the same, only some changes in the variables.<br />
+* μ<sub>k</sub> is a vector of means of the average of each feature in the class k
+* σ<sup>2</sup> is now a covariance matrix and represented by Σ which is again assumed to be the same for each class.
+![](Images/covariance.jpg)
+
+Remember that x and μ<sub>k</sub> are now vectors and the T means transpose.
