@@ -76,7 +76,7 @@ We can see that in this case QDA(the second picture) does a slightly better job 
 
 # LDA Dimensionality Reduction
 In sklearn, you will find that LDA also is a method of dimensionality reduction. Let us quickly look at that as well.<br />
-This is not a classification algorithm, it is a way of transforming the feature space into a lower dimensional space and then the user is free to use more robust classification algorithms like RandomForest on this compressed data.<br />
+This is not a classification algorithm and is not related to the above explanation, it is a way of transforming the feature space into a lower dimensional space and then the user is free to use more robust classification algorithms like RandomForest on this compressed data.<br />
 
 **But how is this different from PCA?**<br />
 The basic aim of PCA is to project the Data into a new axis that captures the variance of the data. The aim of the LDA dimensionality reduction technique is to project the Data into a new axis that ehnances the separatiblity of the classes. The Picture given below should make it clear.
