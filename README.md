@@ -29,7 +29,7 @@ The equation of this graph is:
 ![](Images/normal_eqn.PNG)
 
 * μ<sub>k</sub> is the average of all x belonging to class k
-* σ<sup>2</sup><sub>k</sub> is the variance of all x belonging to class k. **The assumption of LDA is that the variance of all classes is equal and so we can refer to it as just σ<sup>2</sup>**
+* σ<sup>2</sup><sub>k</sub> is the variance of all x belonging to class k. **The assumption of LDA is that the variance of all classes is equal and so we can refer to it as just σ<sup>2</sup>**.<br />
 After knowing all these values, we need to plug it into P<sub>k</sub>(x) and find its value for each k. The class corresponding to the highest value is the class to which this particular data-point belongs to. Lets compare the values for two arbitrary classes and see if we can conclude something.
 
 ![](Images/img1.jpg)
