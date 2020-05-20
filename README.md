@@ -29,7 +29,7 @@ The equation of this graph is:
 ![](Images/normal_eqn.PNG)
 
 * μ<sub>k</sub> is the average of all x belonging to class k
-* σ<sup>2</sup><sub>k</sub> is the variance of all x belonging to class k. **The assumption of LDA is that the variance of all classes is equal and so we can refer to it as just σ<sup>2</sup>**
+* σ<sup>2</sup><sub>k</sub> is the variance of all x belonging to class k. **The assumption of LDA is that the variance of all classes is equal and so we can refer to it as just σ<sup>2</sup>**.<br />
 After knowing all these values, we need to plug it into P<sub>k</sub>(x) and find its value for each k. The class corresponding to the highest value is the class to which this particular data-point belongs to. Lets compare the values for two arbitrary classes and see if we can conclude something.
 
 ![](Images/img1.jpg)
@@ -42,14 +42,15 @@ After cancelling the the common terms in both the equations, we are left with a 
 
 ![](Images/img3.PNG)
 
-We can see that this expression is linear with respect to x and so the whole process is called Linear Discriminant Analysis. To figure out the class, the ẟ<sub>k</sub>(x) values for two classes is compared with an inequality sign and this inequaity gives the decision boundary between two classes which is linear in this case.<br />
+We can see that this expression is linear with respect to x and so the whole process is called Linear Discriminant Analysis. To figure out the class, the ẟ<sub>k</sub>(x) values for two classes is compared with an inequality sign and this inequaity gives the decision boundary between two classes which is linear in this case. ẟ<sub>k</sub>(x) is called the **Linear Discriminant function**<br />
 Now all that is left to do is estimate the values of μ<sub>k</sub>, σ<sup>2</sup> and π<sub>k</sub>. We have just assumed that the distribution is gaussian which gave us the above equation, but these values are still yet to be known. The estimates of these values are given by
 ![](Images/estimates1.PNG)
 
 ![](Images/estimates2.PNG)
 * μ<sub>k</sub> is the average of x over each class
 * σ<sup>2</sup> is like a weighted average of the variance of each class
-* π<sub>k</sub> is the fraction of data belonging to class k in the training set<br />
+* π<sub>k</sub> is the fraction of data belonging to class k in the training set
+* N is the number of points in the training set and K is the number of dictinct classes<br />
 These values are plugged into ẟ<sub>k</sub>(x) along with x and computed for each class and compared<br />
 
 Now if the number of features is more than one, the concept remains the same, only some changes in the variables.<br />
@@ -57,4 +58,28 @@ Now if the number of features is more than one, the concept remains the same, on
 * σ<sup>2</sup> is now a covariance matrix and represented by Σ which is again assumed to be the same for each class.
 ![](Images/covariance.jpg)
 
-Remember that x and μ<sub>k</sub> are now vectors and the T means transpose.
+Remember that x and μ<sub>k</sub> are now vectors and the T means transpose. Now the generalised Linear discriminant function is  
+![](Images/LDF.PNG)
+
+# QDA Classifier
+And thats LDA done. Lets quickly look at something more interesting. LDA gives us only linear boundaries which will not always be good enough to separate the data. The culprit behind this is our assumption of the variance or the covariance to be equal for all classes because of which the quadratic term was a common term and cancelled out. What if we do not make this assumption and generalise LDA. This is what is called Quadratic Discriminant Analysis or QDA.
+Nothing new to learn in QDA, just that we cannot cancel the X<sup>2</sup> term and so our discriminant function is now a little different. It is now called the **Quadratic Discriminant Function** and is represented by 
+![](Images/QDF.PNG)
+
+You can see that this expression is no longer linear with respect to X.<br />
+Lets see the difference in performance of LDA and QDA on the Iris dataset by drawing the decision boundary.
+![](Images/LDA_Iris.PNG)
+
+![](Images/QDA_Iris.PNG)
+
+We can see that in this case QDA does a mildly better job with the decision boundary of Versicolor and Virginica.
+
+# LDA Dimensionality Reduction
+In sklearn, you will find that LDA also is a method of dimensionality reduction. Let us quickly look at that as well.<br />
+This is not a classification algorithm, it is a way of transforming the feature space into a lower dimensional space and then the user is free to use more robust classification algorithms like RandomForest on this compressed data.<br />
+
+**But how is this different from PCA?**<br />
+The basic aim of PCA is to project the Data into a new axis that captures the variance of the data. The aim of the LDA dimensionality reduction technique is to project the Data into a new axis that ehnances the separatiblity of the classes. The Picture given below should make it clear.
+![](Images/LDAvsPCA.PNG)
+
+So PCA does not take into account the class labels, just tries to project the whole data onto a meaningful axis that explains its variance, where as LDA is concerned about the class labels and tries to maximise separatibility. Normally you would use PCA first if required to get rid of multicollinearity and other issues and then perform a LDA reduction before passing it on to some classification algorithm
