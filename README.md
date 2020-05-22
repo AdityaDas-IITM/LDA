@@ -4,7 +4,7 @@ Today we will learn about a new classification algorithm called LDA or Linear Di
 
 For the Introduction and explanation of topics, click [here](https://github.com/AdityaDas-IITM/LDA/blob/master/Intro.md)
 
-For the notebook with implementation using just numpy and also using the sklearn library, click [here](https://github.com/AdityaDas-IITM/LDA/blob/master/implementation.ipynb)
+For the notebook with implementation using just numpy and also using the sklearn library, click [here](https://github.com/AdityaDas-IITM/LDA/blob/master/Implementation.ipynb)
 
 The dataset contains two features and has a total of three unique classes.<br />
 [Link](https://github.com/AdityaDas-IITM/LDA/blob/master/data.csv) to the Dataset
